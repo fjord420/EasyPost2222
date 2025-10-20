@@ -1,48 +1,95 @@
-# SaaS Microservices
+# Welcome to Your SaaS Dashboard
 
-This is an example SaaS project with 2 API services defined as microservices.
+This is a web application that includes a visual dashboard where you can view and track important information.
 
-## Getting Started
+## What Does This Do?
 
-```sh
+This application has two main parts that work together:
+
+1. **Dashboard** - A friendly website interface where you can see charts, metrics, and activity
+2. **API Service** - The behind-the-scenes system that provides the data to display on the dashboard
+
+Think of it like a car: the dashboard is what you see and interact with, and the API is the engine that makes everything work.
+
+## How to Get Started
+
+### What You'll Need
+
+Before you begin, make sure you have these programs installed on your computer:
+- **Node.js** (version 22 or newer)
+- **pnpm** (version 10 or newer) - This is a tool that helps manage the application
+
+If you're not sure whether you have these, ask your technical team for help setting them up.
+
+### Starting the Application
+
+Once everything is installed, follow these simple steps:
+
+**Step 1:** Open your terminal or command prompt
+
+**Step 2:** Navigate to this folder (if you're not already there)
+
+**Step 3:** Install everything the application needs by typing:
+```
 pnpm install
+```
+Wait for this to finish - it might take a minute or two.
+
+**Step 4:** Start the application by typing:
+```
 pnpm dev
 ```
 
-Open http://localhost:3024 to view the dashboard. The dashboard will make API calls
-to the `api` service for the information to display in the dashboard.
-
-## How It Works
-
-There are 2 separate applications in this example:
-
-- `dashboard` - A [Next.js](https://nextjs.org/) application to show the UI. This application also controls the `microfrontends.json` configuration to route API paths to the other microservices (see below).
-- `api` - An [Express.js](https://expressjs.com/) backend serving data displayed in the dashboard.
-
-These all run under the same domain. Paths to each application are routed using Vercel's [microfrontends](https://vercel.com/docs/microfrontends) support:
-
-```mermaid
-graph TD
-    Request --> Vercel{Vercel}
-
-    Vercel -->|"/api/*"| Api[api]
-    Vercel -->|"Everything else"| DashboardApp[Dashboard]
+**Step 5:** Open your web browser and go to:
+```
+http://localhost:3024
 ```
 
-## Running Locally
+That's it! You should now see your dashboard.
 
-To run all applications together, run:
+## What You'll See
 
-```sh
-pnpm dev
-```
+When you open the dashboard, you'll be able to:
+- View important metrics and statistics
+- See recent activity
+- Check weekly charts and trends
+- Navigate through different sections
 
-A [local development proxy](https://vercel.com/docs/microfrontends/local-development) is automatically run to stitch requests from each application to the local instance of each service.
+Everything updates automatically, so you'll always see the latest information.
 
-A single or subset of applications can also be run:
+## Stopping the Application
 
-```sh
-pnpm dev:dashboard
-pnpm dev:api
-pnpm turbo run dev -F api -F dashboard
-```
+When you're done, you can stop the application by:
+1. Going back to your terminal/command prompt
+2. Press `Ctrl + C` on your keyboard (or `Command + C` on Mac)
+
+## Need Help?
+
+If something isn't working or you're not sure what to do:
+- Check that you followed all the steps in order
+- Make sure Node.js and pnpm are properly installed
+- Contact your technical team for assistance
+
+## Technical Details
+
+For developers and technical users, here are some additional details:
+
+### Project Structure
+- `apps/dashboard` - Next.js application (frontend)
+- `apps/api` - Express.js service (backend)
+
+### Additional Commands
+- Run only the dashboard: `pnpm dev:dashboard`
+- Run only the API: `pnpm dev:api`
+- Build for production: `pnpm build`
+- Type checking: `pnpm typecheck`
+
+### Architecture
+This project uses Vercel's microfrontends approach to route requests:
+- Dashboard handles all UI routes
+- API service handles `/api/*` paths
+- All services run under the same domain
+
+### Requirements
+- Node.js 22.x
+- pnpm 10.x
