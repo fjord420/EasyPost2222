@@ -1,0 +1,72 @@
+{
+  "orchestrator": {
+    "maxConcurrentTasks": 5,
+    "taskTimeout": 300000,
+    "retryAttempts": 3,
+    "enableObservability": true
+  },
+  "agents": {
+    "planning-agent": {
+      "enabled": true,
+      "model": "claude-sonnet-4",
+      "capabilities": [
+        "architecture-design",
+        "system-planning",
+        "api-specification",
+        "database-schema",
+        "roadmap-creation"
+      ],
+      "maxConcurrentTasks": 2,
+      "specialization": "Creates technical architecture and planning documents"
+    },
+    "backend-agent": {
+      "enabled": true,
+      "model": "claude-sonnet-4",
+      "capabilities": [
+        "api-development",
+        "database-integration",
+        "authentication",
+        "server-logic",
+        "api-documentation"
+      ],
+      "maxConcurrentTasks": 3,
+      "specialization": "Develops backend APIs with Next.js and Express"
+    },
+    "frontend-agent": {
+      "enabled": true,
+      "model": "claude-sonnet-4",
+      "capabilities": [
+        "ui-development",
+        "component-creation",
+        "figma-conversion",
+        "builder-io-integration",
+        "state-management"
+      ],
+      "maxConcurrentTasks": 3,
+      "specialization": "Creates frontends with Next.js, Builder.io, and Figma"
+    },
+    "easypost-agent": {
+      "enabled": true,
+      "model": "claude-sonnet-4",
+      "capabilities": [
+        "label-creation",
+        "address-validation",
+        "rate-calculation",
+        "shipment-tracking",
+        "carrier-management"
+      ],
+      "maxConcurrentTasks": 5,
+      "specialization": "Manages EasyPost shipping operations"
+    }
+  },
+  "communication": {
+    "messageRetention": 3600000,
+    "maxQueueSize": 1000,
+    "retryDelay": 5000
+  },
+  "observability": {
+    "serverUrl": "http://localhost:4000",
+    "enabled": true,
+    "summarizeEvents": true
+  }
+}

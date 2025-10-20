@@ -1,0 +1,17 @@
+# Environment
+.env
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Generated code (from agents)
+output/
+generated/
+
+# OS
+.DS_Store

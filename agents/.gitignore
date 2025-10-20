@@ -1,0 +1,19 @@
+# Ignore all .env files in any agent directory
+**/.env
+
+# Dependencies
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+
+# Logs
+**/logs/
+**/*.log
+
+# Build outputs
+**/dist/
+**/build/
+
+# But don't ignore .env.sample files
+!**/.env.sample

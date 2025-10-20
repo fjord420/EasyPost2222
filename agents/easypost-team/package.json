@@ -1,0 +1,28 @@
+{
+  "name": "easypost-agent-team",
+  "version": "1.0.0",
+  "description": "Multi-agent team for EasyPost development",
+  "main": "orchestrator/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node orchestrator/index.js",
+    "planning": "node planning-agent/index.js",
+    "backend": "node backend-agent/index.js",
+    "frontend": "node frontend-agent/index.js",
+    "shipping": "node easypost-shipping-agent/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@easypost/api": "file:../../easypost-node",
+    "dotenv": "^16.4.5",
+    "uuid": "^11.1.0"
+  },
+  "keywords": [
+    "easypost",
+    "multi-agent",
+    "ai",
+    "orchestration"
+  ],
+  "author": "",
+  "license": "MIT"
+}
